@@ -5,16 +5,17 @@
     <th>タスクのID</th>
     <th>タスクの内容</th>
   </tr>
+  
+  <% @tasks.each do |task| %>
   <tr>
-    <% @tasks.each do |task| %>
-    <td>
-      <li><%= link_to task.id, task_path(task)  %></li>
-    </td>
-    <td>
-      <li><%= task.content  %></li>
-    </td>
-    <% end %>
+    <td><%= link_to task.id, task_path(task)  %></td>
+    <td><%= task.content  %></td>
   </tr>
+  <% end %>
+
 </table>
 
+<ul>
+  <li><%= link_to 'タスクの新規作成', new_task_path %></li>
+</ul>
 
