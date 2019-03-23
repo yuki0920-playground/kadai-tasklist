@@ -1,9 +1,16 @@
 <h1>ID:<%= @task.id %>のタスク</h1>
-<p>タスクの内容<%= @task.content %></p>
-<p>タスクのステータス<%= @task.status %></p>
 
-<ul>
-  <li><%= link_to 'タスクの一覧',  tasks_path %></li>
-  <li><%= link_to 'タスクの更新',  edit_task_path(@task) %></li>
-  <li><%= link_to 'タスクの削除',  @task, method: :delete %></li>
-</ul>
+<table class="table table-borderd">
+  <tr>
+    <th>タスクの内容</th>
+    <td><%= @task.content %></td>
+  </tr>
+  <tr>
+    <th>タスクのステータス</th>
+    <td><%= @task.status %></td>
+  </tr>
+</table>
+
+<%= link_to 'タスクの更新',  edit_task_path(@task), class: 'btn btn-primary' %>
+<%= link_to 'タスクの削除',  @task, method: :delete, class: 'btn btn-danger' %>
+
